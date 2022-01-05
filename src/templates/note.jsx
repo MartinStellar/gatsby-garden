@@ -6,7 +6,6 @@ import Layout from '../layout/layout'
 import '../styles/note.css'
 import '../styles/graph.css'
 const makeSlug = require('../utils/make-slug')
-const moment = require('moment')
 
 export default function Note({ pageContext, data }) {
   const post = data.mdx
@@ -18,12 +17,12 @@ export default function Note({ pageContext, data }) {
     focusedNodeId: post.fields.title,
   }
 
-  // Links to the current Note
-  for (let i = 0; i < pageContext.referredBy.length; i++) {
-    const refNoteTitle = pageContext.referredBy[i].title
-    graphData.nodes.push({ id: refNoteTitle })
-    graphData.links.push({ source: refNoteTitle, target: post.fields.title })
-  }
+  // Links to the current Note - Disabled for Martin
+  // for (let i = 0; i < pageContext.referredBy.length; i++) {
+  //   const refNoteTitle = pageContext.referredBy[i].title
+  //   graphData.nodes.push({ id: refNoteTitle })
+  //   graphData.links.push({ source: refNoteTitle, target: post.fields.title })
+  // }
 
   // Links from the current Note
   for (let i = 0; i < pageContext.refersTo.length; i++) {
@@ -63,36 +62,69 @@ export default function Note({ pageContext, data }) {
 
   return (
     <Layout title={post.fields.title} type="note">
-      <div className="column is-three-fifths">
-        <main>
-          <div className="note-area note-page-section">
-            <div className="buttons for-back-home">
-              <Link className="button is-text button__page-back" to="/">
-                <span className="icon is-small">
-                  <svg
-                    width="12"
-                    height="20"
-                    viewBox="0 0 12 20"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      fillRule="evenodd"
-                      clipRule="evenodd"
-                      d="M11.0309 0.468998C11.1007 0.538667 11.1561 0.62143 11.1939 0.712548C11.2318 0.803665 11.2512 0.901347 11.2512 0.999998C11.2512 1.09865 11.2318 1.19633 11.1939 1.28745C11.1561 1.37857 11.1007 1.46133 11.0309 1.531L2.56038 10L11.0309 18.469C11.1717 18.6098 11.2508 18.8008 11.2508 19C11.2508 19.1992 11.1717 19.3902 11.0309 19.531C10.89 19.6718 10.699 19.7509 10.4999 19.7509C10.3007 19.7509 10.1097 19.6718 9.96887 19.531L0.968875 10.531C0.899031 10.4613 0.843616 10.3786 0.805806 10.2874C0.767997 10.1963 0.748535 10.0986 0.748535 10C0.748535 9.90135 0.767997 9.80367 0.805806 9.71255C0.843616 9.62143 0.899031 9.53867 0.968875 9.469L9.96887 0.468998C10.0385 0.399153 10.1213 0.343739 10.2124 0.305929C10.3035 0.26812 10.4012 0.248657 10.4999 0.248657C10.5985 0.248657 10.6962 0.26812 10.7873 0.305929C10.8784 0.343739 10.9612 0.399153 11.0309 0.468998Z"
-                      fill="var(--text-main)"
-                    />
-                  </svg>
-                </span>
-              </Link>
-            </div>
-
-            <h1 className="note-title">{post.fields.title}</h1>
+      
+      <div className="column is-four-fifths note-page-section ">
+        <main className="columns">
+          <div className="column is-one-fifth">
+            <ul className="nav-list">
+              <li><Link to='/tags/instructions'>⚙️ Instructions</Link></li>
+              <li><Link to='/tags/workflows'>▶️ Workflows</Link></li>
+              <li><Link to='/tags/learning'>👨‍🎓 Learning</Link></li>
+              <li><Link to='/tags/articles'>📄 Articles</Link></li>
+              <li><Link to='/tags'>#️⃣ Tags</Link></li>
+            </ul>
+          </div>
+        
+        <div className="column is-two-fifths">
+          <h1 className="note-title">{post.fields.title}</h1>
             <div className="note-content">
               <MDXRenderer>{post.body}</MDXRenderer>
             </div>
+            
+            <p>&nbsp;</p>
 
-            <div className="note-meta">
+            {/* This is Binny's two-column Nav Menu layout. I'm keeping it here in case I want to quickly bring it back some day
+              <div className="note-navigation columns">
+                <div className="column">
+                  <ul>
+                    <li><Link to='/pick-a-lead-and-review-where-that-deal-is-at'>🚀 Review lead</Link></li>
+                    <li><Link to='/'>👋 Welcome</Link></li>
+                    <li><Link to='/how-to-use-salesflow-coach'>👨‍🎓 How to</Link></li>
+                  </ul>
+                </div>
+                <div className="column">
+                  <ul>
+                    <li><Link to='/start-salesflow-coach'>🆕 Start</Link></li>
+                    <li><Link to='/about-salesflow-coach'>❓ About</Link></li>
+                    <li><Link to='/suppppport'>💡 Support</Link></li>                  
+                  </ul>
+                </div>
+              </div>
+            */}
+            
+              <div className="note-navigation columns">
+                <div className="column">
+                  <ul>
+                    <li><Link to='/pick-a-lead-and-review-where-that-deal-is-at'>🚀 Review lead</Link></li>
+                  </ul>
+                </div>
+              
+                <div className="column">
+                  <ul>
+                    <li><Link to='/'>👋 Welcome</Link></li>
+                  </ul>
+                </div>
+              
+                <div className="column">
+                  <ul>
+                    <li><Link to='/how-to-use-salesflow-coach'>👨‍🎓 How to</Link></li>
+                  </ul>
+                </div>
+              </div>
+  
+              <div className="note-meta">
+            
+            {/*            
               {pageContext.referredBy.length ? (
                 <div className="related note-references">
                   <h5 className="block-title">Links to this note</h5>
@@ -101,30 +133,20 @@ export default function Note({ pageContext, data }) {
                       <div key={index} className="related-group">
                         <Link to={`/${makeSlug(note.title)}`}>
                           <h4>{note.title}</h4>
-                          <p className="related-excerpt">{note.excerpt}</p>
                         </Link>
                       </div>
                     ))}
                   </div>
                 </div>
-              ) : null}
+              ) : null}*/}
 
-              <div className="related block-area">
-                <h5 className="block-title">Meta</h5>
-                <div className="related-wrapper">
-                  <div className="related-group">
-                    <p>
-                      <strong className="note-meta-title">Published on: </strong>{' '}
-                      {moment(new Date(post.fields.date)).format('Do MMMM, YYYY')}
-                    </p>
-                    {post.frontmatter.source ? (
-                      <Source src={post.frontmatter.source} />
-                    ) : null}
-
-                    {post.frontmatter.tags ? (
+              {post.frontmatter.tags ? (
+                <div className="related block-area">
+                  <div className="related-wrapper">
+                    <div className="related-group">
                       <div className="note-tags">
                         <strong className="note-meta-title">
-                          Tagged With:{' '}
+                          Tags:{' '}
                         </strong>
                         <ul>
                           {post.frontmatter.tags.map((tag, index) => (
@@ -134,11 +156,21 @@ export default function Note({ pageContext, data }) {
                           ))}
                         </ul>
                       </div>
-                    ) : null}
-                  </div>
+                    </div>
+                  </div> 
                 </div>
-              </div>
+              ) : null }
+
+
             </div>
+
+            <div className="footer-content">
+              <p className="is-size-7"> SalesFlow Coach V 0.2 | Made with ❤️ by Martin Stellar | Built with <a href="https://github.com/binnyva/gatsby-garden/">Gatsby Garden</a></p>
+            </div>
+
+          </div>
+        
+          <div className="column is-two-fiths">
 
             <div className="note-graph">
               <Graph
@@ -216,3 +248,4 @@ export const query = graphql`
     }
   }
 `
+  

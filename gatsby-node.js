@@ -8,15 +8,14 @@ const siteConfig = require(`./gatsby-config`)
 exports.onCreateNode = ({ node, getNode, actions }) => {
   if (node.internal.type === `Mdx`) {
     const { createNodeField } = actions
+
+    const fileName = createFilePath({ node, getNode, basePath: `_notes` }).replace(/^\/(.+)\/$/, '$1')
     const title = node.frontmatter.title
       ? node.frontmatter.title
-      : createFilePath({ node, getNode, basePath: `_notes` }).replace(
-          /^\/(.+)\/$/,
-          '$1'
-        )
+      : fileName
     const slug = node.frontmatter.slug
       ? makeSlug(node.frontmatter.slug)
-      : makeSlug(title)
+      : makeSlug(fileName)
     const fileNode = getNode(node.parent)
     const date = node.frontmatter.date ? node.frontmatter.date : fileNode.mtime
     const visibility = node.frontmatter.visibility
@@ -32,6 +31,11 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
       node,
       name: `slug`,
       value: `/${slug}`,
+    })
+    createNodeField({
+      node,
+      name: `fileName`,
+      value: fileName,
     })
     createNodeField({
       node,
@@ -68,6 +72,7 @@ exports.createPages = async ({ graphql, actions }) => {
           node {
             fields {
               slug
+              fileName
               title
               visibility
               excerpt
@@ -155,6 +160,15 @@ exports.createPages = async ({ graphql, actions }) => {
     for (let j = 0; j < aliases.length; j++) {
       createRedirect({
         fromPath: `/${makeSlug(aliases[j])}`,
+        toPath: node.fields.slug,
+        redirectInBrowser: true,
+        isPermanent: true,
+      })
+    }
+
+    if(node.fields.slug != '/' + makeSlug(node.fields.fileName)) { // If there is a custom slug, setup a redirect.
+      createRedirect({
+        fromPath: `/${makeSlug(node.fields.fileName)}`,
         toPath: node.fields.slug,
         redirectInBrowser: true,
         isPermanent: true,
@@ -273,6 +287,7 @@ exports.createSchemaCustomization = ({ actions }) => {
     """
     type Frontmatter @infer {
       title: String
+      fileName: String
       date: Date @dateformat
       tags: [String]
       aliases: [String]
