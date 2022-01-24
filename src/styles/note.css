@@ -27,7 +27,7 @@
 .note-graph,
 .note-meta,
 .note-content {
-  margin: 10px;
+  margin: 5px;
 }
 
 .note-content img {
@@ -35,6 +35,7 @@
 }
 .note-content a {
   color: var(--link) !important;
+  text-decoration: underline;
 }
 .note-content table {
   width: 100%;
@@ -72,7 +73,7 @@
 }
 
 .note-list .note-area {
-  padding: 10px;
+  padding: 5px;
 }
 .note-area .note-title {
   background-color: transparent;
@@ -122,10 +123,10 @@
 
 .nav-list {
   list-style: none;
-  margin: 0;
+  margin: 20;
   padding: 0;
 }
 
 .nav-list li {
-  margin-bottom: 4rem;
+  margin-bottom:1rem;
 }

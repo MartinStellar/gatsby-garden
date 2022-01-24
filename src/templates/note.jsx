@@ -69,6 +69,7 @@ export default function Note({ pageContext, data }) {
             <ul className="nav-list">
               <li><Link to='/tags/instructions'>⚙️ Instructions</Link></li>
               <li><Link to='/tags/workflows'>▶️ Workflows</Link></li>
+              <li><Link to='/salesflow-questions-moc'>🧐 Pointy questions</Link></li>
               <li><Link to='/tags/learning'>👨‍🎓 Learning</Link></li>
               <li><Link to='/tags/articles'>📄 Articles</Link></li>
               <li><Link to='/tags'>#️⃣ Tags</Link></li>
@@ -170,7 +171,7 @@ export default function Note({ pageContext, data }) {
 
           </div>
         
-          <div className="column is-two-fiths">
+          <div className="column is-two-fifths">
 
             <div className="note-graph">
               <Graph

@@ -3,21 +3,21 @@
 
 html, html[data-theme="light"], body.light {
     --bg-main: #FFFFFF;
-    --bg-sub: #FAFAFC;
+    --bg-sub: #ffffff;
     --color-bis: #363636;
     --text-main: #18181C;
     --text-sub: #5D5D67;
-    --link: #2380ED;
+    --link: #405aac;
     --border: #E5E5E5;
 }
 
 html[data-theme="dark"], body.dark {
-    --bg-main: #18181C;
-    --bg-sub: #262626;
+    --bg-main: #424242;
+    --bg-sub: #424242;
     --color-bis: #E6E6E6;
     --text-main: #FAFAFC;
     --text-sub: #FFFFFF;
-    --link: #6D9EFF;
+    --link: #405aac;
     --border: #353535;
 }
 
@@ -28,7 +28,7 @@ html[data-theme="dark"], body.dark {
         --bg-sub: #262626;
         --text-main: #FAFAFC;
         --text-sub: #FFFFFF;
-        --link: #6D9EFF;
+        --link: #405aac;
         --border: #353535;
     }
 
@@ -151,16 +151,19 @@ main {
 h1 {
     font-size: 2.074rem;
     font-weight: 600;
+    color: #405aac;
 }
 
 h2 {
     font-size: 1.728rem;
     font-weight: 600;
+    color: #405aac;
 }
 
 h3 {
     font-size: 1.44rem;
     font-weight: 600;
+    color: #405aac;
 }
 
 h4 {
@@ -217,7 +220,7 @@ h6 {
 
 h1, h2, h3, h4, h5, h6 {
     margin: 0;
-    font-family: 'IBM Plex Sans', sans-serif;
+    font-family: 'Playfair Display', serif;
 }
 
 p a,
@@ -533,6 +536,7 @@ hr {
     font-family: var(--primary-font-family);
     font-size: 13px;
     margin-left: -3px;
+    color: #ac4045;
 }
 
 .link-to-notes a:hover {

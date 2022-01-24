@@ -1,6 +1,6 @@
 body {
-  --bg-main: #FFFFFF;
-  --bg-sub: #FAFAFC;
+  --bg-main: #e5e5e5;
+  --bg-sub: #ffffff;
   --color-bis: #363636;
   --text-main: #18181C;
   --text-sub: #5D5D67;
@@ -9,11 +9,11 @@ body {
 }
 
 body.dark {
-  --bg-main: #18181C;
-  --bg-sub: #262626;
+  --bg-main: #212121;
+  --bg-sub: #212121;
   --color-bis: #E6E6E6;
   --text-main: #FAFAFC;
   --text-sub: #FFFFFF;
-  --link: #6D9EFF;
+  --link: #506dcb;
   --border: #353535;
 }

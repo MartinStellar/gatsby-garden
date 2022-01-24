@@ -49,7 +49,7 @@ export default function Note({ pageContext }) {
 
   // the graph configuration, just override the ones you need
   const graphConfig = {
-    // automaticRearrangeAfterDropNode: true,
+    // automaticRearrangeAfterDropNode: false,
     directed: false, // If true, highlighting on mouseover will also be directed
     // initialZoom: 1.4,
     highlightDegree: 2,
