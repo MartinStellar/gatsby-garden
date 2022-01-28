@@ -66,13 +66,17 @@ export default function Note({ pageContext, data }) {
       <div className="column is-four-fifths note-page-section ">
         <main className="columns">
           <div className="column is-one-fifth">
-            <ul className="nav-list">
-              <li><Link to='/tags/instructions'>⚙️ Instructions</Link></li>
-              <li><Link to='/tags/workflows'>▶️ Workflows</Link></li>
-              <li><Link to='/salesflow-questions-moc'>🧐 Pointy questions</Link></li>
-              <li><Link to='/tags/learning'>👨‍🎓 Learning</Link></li>
-              <li><Link to='/tags/articles'>📄 Articles</Link></li>
-              <li><Link to='/tags'>#️⃣ Tags</Link></li>
+            <ul className="nav-list">            
+              <p><h3>Business review</h3></p>
+              <li><Link to='/how-is-your-business-doing'>❓How is your business doing?</Link></li> 
+              <li><Link to='/how-is-your-money-game'>❓How is your Money Game?</Link></li> 
+              <li><Link to='/any-deals-in-your-pipeline'>❓Any deals in your pipeline?</Link></li> 
+              <p><h3>Workflows</h3></p>        
+              <li><Link to='/tags/workflows'>📁 All Workflows</Link></li> 
+              <li><Link to='/start-salesflow-coach'>▶️ Start the programme</Link></li>
+              <li><Link to='/pick-a-lead-and-review-where-that-deal-is-at'>🔎 Pipeline review</Link></li>
+              <li><Link to='/introduction-to-myno-mining-your-network-for-opportunities'>⛏️ Mine your network for opportunities</Link></li>
+              <li><Link to='/how-to-clean-up-deadwood'>🪓 Cull & clean up your pipeline</Link></li>
             </ul>
           </div>
         
