@@ -68,7 +68,7 @@ export default function Note({ pageContext, data }) {
           <div className="column is-one-fifth">
             <ul className="nav-list">            
               <p><h3>Business review</h3></p>
-              <li><Link to='/how-is-your-business-doing'>❓How is your business doing?</Link></li> 
+              <li><Link to='/how-is-your-business-doing'>❓ How is your business doing?</Link></li> 
               <li><Link to='/how-is-your-money-game'>❓How is your Money Game?</Link></li> 
               <li><Link to='/any-deals-in-your-pipeline'>❓Any deals in your pipeline?</Link></li> 
               <p><h3>Workflows</h3></p>        
