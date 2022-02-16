@@ -3944,7 +3944,7 @@ a.tag:hover {
   }
 
   .homeblock h1 a {
-    color : var(--text-main);
+/*  color : var(--text-main);*/
   }
 
   .homeblock h1 a:hover {

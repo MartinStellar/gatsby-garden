@@ -49,7 +49,7 @@ export default function Note({ pageContext, data }) {
 
   // the graph configuration, just override the ones you need
   const graphConfig = {
-    automaticRearrangeAfterDropNode: true,
+    automaticRearrangeAfterDropNode: false,
     directed: true,
     initialZoom: 1.4,
     // nodeHighlightBehavior: true,
@@ -63,19 +63,20 @@ export default function Note({ pageContext, data }) {
   return (
     <Layout title={post.fields.title} type="note">
       
-      <div className="column is-four-fifths note-page-section ">
-        <main className="columns">
-          <div className="column is-one-fifth">
-            <ul className="nav-list">            
-              <p><h3>Business review</h3></p>
+      <div className="column is-five-fifths note-page-section " style={{paddingLeft:'3em'}}>
+        <main className="columns" >
+          <div className="column is-one-fifth" style={{fontColor:'#54595F', backgroundColor:'#fafcff', fontSize:'14px'}}>
+            <ul className="nav-list" >
+  
+              <p><h5>Business review</h5></p>
               <li><Link to='/how-is-your-business-doing'>❓ How is your business doing?</Link></li> 
               <li><Link to='/how-is-your-money-game'>❓How is your Money Game?</Link></li> 
               <li><Link to='/any-deals-in-your-pipeline'>❓Any deals in your pipeline?</Link></li> 
-              <p><h3>Workflows</h3></p>        
+              <p><h5>Workflows</h5></p>        
               <li><Link to='/tags/workflows'>📁 All Workflows</Link></li> 
               <li><Link to='/start-salesflow-coach'>▶️ Start the programme</Link></li>
               <li><Link to='/pick-a-lead-and-review-where-that-deal-is-at'>🔎 Pipeline review</Link></li>
-              <li><Link to='/introduction-to-myno-mining-your-network-for-opportunities'>⛏️ Mine your network for opportunities</Link></li>
+              <li><Link to='/myno-mine-your-network-for-opportunities'>⛏️ Mine your network for opportunities</Link></li>
               <li><Link to='/how-to-clean-up-deadwood'>🪓 Cull & clean up your pipeline</Link></li>
             </ul>
           </div>
@@ -175,7 +176,7 @@ export default function Note({ pageContext, data }) {
 
           </div>
         
-          <div className="column is-two-fifths">
+          <div className="column is-one-and-a-half-fifths" style={{paddingRight: 3+'em'}}>
 
             <div className="note-graph">
               <Graph

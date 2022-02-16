@@ -157,18 +157,19 @@ h1 {
 h2 {
     font-size: 1.728rem;
     font-weight: 600;
-    color: #405aac;
+    color: #54595F;
 }
 
 h3 {
     font-size: 1.44rem;
     font-weight: 600;
-    color: #405aac;
+    color: #54595F; 
 }
 
 h4 {
     font-size: 1.2rem;
     font-weight: 600;
+    color: #405aac;
 }
 
 h5 {
@@ -1394,7 +1395,8 @@ label.srs-toggle {
 }
 }
 
-@media screen and (max-width: 1024px) {
+
+@media screen and (max-width: 100%) {
     .tooltip .right {
         display: none;
     }
