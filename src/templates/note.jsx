@@ -85,9 +85,24 @@ export default function Note({ pageContext, data }) {
           <h1 className="note-title">{post.fields.title}</h1>
             <div className="note-content">
               <MDXRenderer>{post.body}</MDXRenderer>
+
+              <p>&nbsp;</p>
+
+              {post.frontmatter.tags ? (
+                <div className="note-tags">
+                  <strong className="note-meta-title">
+                    Tags:{' '}
+                  </strong>
+                  <ul>
+                    {post.frontmatter.tags.map((tag, index) => (
+                      <li key={index}>
+                        <Link to={`/tags/${makeSlug(tag)}`}>{tag}</Link>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ) : null }
             </div>
-            
-            <p>&nbsp;</p>
 
             {/* This is Binny's two-column Nav Menu layout. I'm keeping it here in case I want to quickly bring it back some day
               <div className="note-navigation columns">
@@ -145,28 +160,6 @@ export default function Note({ pageContext, data }) {
                   </div>
                 </div>
               ) : null}*/}
-
-              {post.frontmatter.tags ? (
-                <div className="related block-area">
-                  <div className="related-wrapper">
-                    <div className="related-group">
-                      <div className="note-tags">
-                        <strong className="note-meta-title">
-                          Tags:{' '}
-                        </strong>
-                        <ul>
-                          {post.frontmatter.tags.map((tag, index) => (
-                            <li key={index}>
-                              <Link to={`/tags/${makeSlug(tag)}`}>{tag}</Link>
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-                    </div>
-                  </div> 
-                </div>
-              ) : null }
-
 
             </div>
 

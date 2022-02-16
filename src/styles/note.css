@@ -7,6 +7,9 @@
   border-bottom-right-radius: 10px;
 }
 
+.note-tags {
+  font-size: .8em;
+}
 .note-tags h6,
 .note-tags ul,
 .note-tags li {
