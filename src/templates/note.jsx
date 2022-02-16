@@ -68,11 +68,11 @@ export default function Note({ pageContext, data }) {
           <div className="column is-one-fifth" style={{fontColor:'#54595F', backgroundColor:'#fafcff', fontSize:'14px'}}>
             <ul className="nav-list" >
   
-              <p><h5>Business review</h5></p>
+              <h5>Business review</h5>
               <li><Link to='/how-is-your-business-doing'>❓ How is your business doing?</Link></li> 
               <li><Link to='/how-is-your-money-game'>❓How is your Money Game?</Link></li> 
               <li><Link to='/any-deals-in-your-pipeline'>❓Any deals in your pipeline?</Link></li> 
-              <p><h5>Workflows</h5></p>        
+              <h5>Workflows</h5>
               <li><Link to='/tags/workflows'>📁 All Workflows</Link></li> 
               <li><Link to='/start-salesflow-coach'>▶️ Start the programme</Link></li>
               <li><Link to='/pick-a-lead-and-review-where-that-deal-is-at'>🔎 Pipeline review</Link></li>
@@ -125,21 +125,15 @@ export default function Note({ pageContext, data }) {
             
               <div className="note-navigation columns">
                 <div className="column">
-                  <ul>
-                    <li><Link to='/pick-a-lead-and-review-where-that-deal-is-at'>🚀 Review lead</Link></li>
-                  </ul>
+                  <Link to='/pick-a-lead-and-review-where-that-deal-is-at'>🚀 Review lead</Link>
                 </div>
               
                 <div className="column">
-                  <ul>
-                    <li><Link to='/'>👋 Welcome</Link></li>
-                  </ul>
+                  <Link to='/'>👋 Welcome</Link>
                 </div>
               
                 <div className="column">
-                  <ul>
-                    <li><Link to='/how-to-use-salesflow-coach'>👨‍🎓 How to</Link></li>
-                  </ul>
+                  <Link to='/how-to-use-salesflow-coach'>👨‍🎓 How to</Link>
                 </div>
               </div>
   
@@ -183,52 +177,6 @@ export default function Note({ pageContext, data }) {
         </main>
       </div>
     </Layout>
-  )
-}
-
-function Source({ src }) {
-  if (!src) return null
-
-  // :TODO: Handle a list of sources and not just a single source
-
-  let link = ''
-  if (src.includes('<a ')) {
-    // Source given as HTML Link
-    link = <span dangerouslySetInnerHTML={{ __html: src }}></span>
-  } else if (src.includes('](')) {
-    // Source given as Markdown Link - [Text](url)
-    const linkParts = src.match(/\[(.+)\]\((.+)\)/)
-    if (linkParts) {
-      link = (
-        <a href={linkParts[2]} target="_blank" rel="noreferrer">
-          {linkParts[1]}
-        </a>
-      )
-    } else {
-      return null
-    }
-  } else if (src.includes('[[')) {
-    // Source given as Wiki Link - internal link - [[Text]]
-    const titleParts = src.match(/(.+)\|(.+)/) // [[Note Name|Link Text]] format.
-    if (titleParts) {
-      link = <Link to={'/' + makeSlug(titleParts[2])}>{titleParts[1]}</Link>
-    } else {
-      const title = src.replace(new RegExp(/[\[\]]/, 'g'), '') // eslint-disable-line
-      link = <Link to={'/' + makeSlug(title)}>{title}</Link>
-    }
-  } else {
-    // Just an URL given as source
-    link = (
-      <a href={src} target="_blank" rel="noreferrer">
-        Link to Source
-      </a>
-    )
-  }
-
-  return (
-    <p>
-      <strong className="note-meta-title">Source</strong>: {link}
-    </p>
   )
 }
 

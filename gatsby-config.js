@@ -7,7 +7,7 @@ module.exports = {
     siteUrl: `https://salesflowcoach.martinstellar.com/`, // URL at which your site will be published. This should be present if you want RSS feed.
     headerMenu: [ // Top Navbar items
       { type: 'page', item: '', title: 'Home'}, // Type can be 'page', 'note', 'tag', or 'link'
-      { type: 'link', item: 'about-salesflow-coach', title: "About"},
+      { type: 'link', item: '/about-salesflow-coach', title: "About"},
       { type: 'link', item: '/tags/trainings', title: "Trainings"},
       { type: 'page', item: 'support' },
     ],
