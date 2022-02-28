@@ -70,14 +70,14 @@ export default function Note({ pageContext, data }) {
   
               <h5>Business review</h5>
               <li><Link to='/how-is-your-business-doing'>❓ How is your business doing?</Link></li> 
-              <li><Link to='/how-is-your-money-game'>❓How is your Money Game?</Link></li> 
-              <li><Link to='/any-deals-in-your-pipeline'>❓Any deals in your pipeline?</Link></li> 
+              <li><Link to='/how-is-your-money-game'>❓ How is your Money Game?</Link></li> 
+              <li><Link to='/any-deals-in-your-pipeline'>❓ Any deals in your pipeline?</Link></li> 
               <h5>Workflows</h5>
-              <li><Link to='/tags/workflows'>📁 All Workflows</Link></li> 
-              <li><Link to='/start-salesflow-coach'>▶️ Start the programme</Link></li>
+              <li><Link to='/tags/workflows'>📁  All Workflows</Link></li> 
+              <li><Link to='/start-salesflow-coach'>▶️  Start the programme</Link></li>
               <li><Link to='/pick-a-lead-and-review-where-that-deal-is-at'>🔎 Pipeline review</Link></li>
-              <li><Link to='/myno-mine-your-network-for-opportunities'>⛏️ Mine your network for opportunities</Link></li>
-              <li><Link to='/how-to-clean-up-deadwood'>🪓 Cull & clean up your pipeline</Link></li>
+              <li><Link to='/myno-mine-your-network-for-opportunities'>⛏️  Mine your network for opportunities</Link></li>
+              <li><Link to='/how-to-clean-up-deadwood'>🚮  Cull & clean up your pipeline</Link></li>
             </ul>
           </div>
         
@@ -110,7 +110,7 @@ export default function Note({ pageContext, data }) {
             
               <div className="note-navigation columns">
                 <div className="column">
-<<<<<<< HEAD
+
                   <Link to='/pick-a-lead-and-review-where-that-deal-is-at'>🚀 Review lead</Link>
                 </div>
               
@@ -120,23 +120,9 @@ export default function Note({ pageContext, data }) {
               
                 <div className="column">
                   <Link to='/how-to-use-salesflow-coach'>👨‍🎓 How to</Link>
-=======
-                  
-                  <Link to='/pick-a-lead-and-review-where-that-deal-is-at'>🚀 Review lead</Link>
-                  
-                </div>
-              
-                <div className="column">
-                  
-                  <Link to='/'>👋 Welcome</Link>
-                  
-                </div>
-              
-                <div className="column">
-                  
-                    <Link to='/how-to-use-salesflow-coach'>👨‍🎓 How to</Link>
-                  
->>>>>>> 72bd84a (updated footer design)
+
+                                  
+
                 </div>
               </div>
   
@@ -183,7 +169,7 @@ export default function Note({ pageContext, data }) {
             </div>
 
             <div className="footer-content">
-              <p className="is-size-7"> SalesFlow Coach V 0.2 | Made with ❤️ by Martin Stellar | Built with <a href="https://github.com/binnyva/gatsby-garden/">Gatsby Garden</a></p>
+              <p className="is-size-7"> SalesFlow Coach V 0.2 | Made with ❤️  by Martin Stellar | Built with <a href="https://github.com/binnyva/gatsby-garden/">Gatsby Garden</a> and <a href="https://obsidian.md">Obsidian</a></p>
             </div>
 
           </div>
