@@ -9,7 +9,7 @@ export const DefaultMenuStructure = (menuType = 'main') => {
     { type: 'page', item: 'hi-im-salesflow-coach', title: 'Home' },
     { type: 'link', item: 'about-salesflow-coach', title: "About"},
     { type: 'link', item: 'about-salesflow-coach', title: "About"},
-    { type: 'link', item: '/tags/trainings', title: "Trainings"},
+    { type: 'link', item: '/trainings', title: "Trainings"},
 //  { type: 'link', item: 'sitemap' },
 //  <li><Link to='/tags/trainings'>💪 Trainings</Link></li>
 //  <li><Link to='/tags/articles'>📄 Articles</Link></li>

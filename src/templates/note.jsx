@@ -63,11 +63,10 @@ export default function Note({ pageContext, data }) {
   return (
     <Layout title={post.fields.title} type="note">
       
-      <div className="column is-five-fifths note-page-section " style={{paddingLeft:'3em'}}>
+      <div className="column is-five-fifths note-page-section" style={{paddingLeft:'3em'}}>
         <main className="columns" >
           <div className="column is-one-fifth" style={{fontColor:'#54595F', backgroundColor:'#fafcff', fontSize:'14px'}}>
             <ul className="nav-list" >
-  
               <h5>Business review</h5>
               <li><Link to='/how-is-your-business-doing'>❓ How is your business doing?</Link></li> 
               <li><Link to='/how-is-your-money-game'>❓ How is your Money Game?</Link></li> 
@@ -87,6 +86,47 @@ export default function Note({ pageContext, data }) {
               <MDXRenderer>{post.body}</MDXRenderer>
             </div>
             
+    <div className="note-meta">
+    
+    {/*            
+      {pageContext.referredBy.length ? (
+      <div className="related note-references">
+      <h5 className="block-title">Links to this note</h5>
+      <div className="related-wrapper">
+      {pageContext.referredBy.map((note, index) => (
+      <div key={index} className="related-group">
+      <Link to={`/${makeSlug(note.title)}`}>
+      <h4>{note.title}</h4>
+      </Link>
+      </div>
+      ))}
+      </div>
+      </div>
+      ) : null}*/}
+    
+    {post.frontmatter.tags ? (
+      <div className="related block-area">
+      <div className="related-wrapper">
+      <div className="related-group">
+      <div className="note-tags">
+      <strong className="note-meta-title">
+      Tags:{' '}
+      </strong>
+      <ul>
+      {post.frontmatter.tags.map((tag, index) => (
+        <li key={index}>
+        <Link to={`/tags/${makeSlug(tag)}`}>{tag}</Link>
+        </li>
+      ))}
+      </ul>
+      </div>
+      </div>
+      </div> 
+      </div>
+    ) : null }
+    
+    
+    </div>
             <p>&nbsp;</p>
 
             {/* This is Binny's two-column Nav Menu layout. I'm keeping it here in case I want to quickly bring it back some day
@@ -108,75 +148,29 @@ export default function Note({ pageContext, data }) {
               </div>
             */}
             
-              <div className="note-navigation columns">
+    <div className="note-navigation columns" style={{fontSize:'14px'}}>
+    
                 <div className="column">
-
                   <Link to='/pick-a-lead-and-review-where-that-deal-is-at'>🚀 Review lead</Link>
-                </div>
-              
+                </div>        
                 <div className="column">
                   <Link to='/'>👋 Welcome</Link>
-                </div>
-              
+                </div>              
                 <div className="column">
                   <Link to='/how-to-use-salesflow-coach'>👨‍🎓 How to</Link>
-
-                                  
-
                 </div>
               </div>
-  
-              <div className="note-meta">
             
-            {/*            
-              {pageContext.referredBy.length ? (
-                <div className="related note-references">
-                  <h5 className="block-title">Links to this note</h5>
-                  <div className="related-wrapper">
-                    {pageContext.referredBy.map((note, index) => (
-                      <div key={index} className="related-group">
-                        <Link to={`/${makeSlug(note.title)}`}>
-                          <h4>{note.title}</h4>
-                        </Link>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              ) : null}*/}
-
-              {post.frontmatter.tags ? (
-                <div className="related block-area">
-                  <div className="related-wrapper">
-                    <div className="related-group">
-                      <div className="note-tags">
-                        <strong className="note-meta-title">
-                          Tags:{' '}
-                        </strong>
-                        <ul>
-                          {post.frontmatter.tags.map((tag, index) => (
-                            <li key={index}>
-                              <Link to={`/tags/${makeSlug(tag)}`}>{tag}</Link>
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-                    </div>
-                  </div> 
-                </div>
-              ) : null }
-
-
-            </div>
-
-            <div className="footer-content">
-              <p className="is-size-7"> SalesFlow Coach V 0.2 | Made with ❤️  by Martin Stellar | Built with <a href="https://github.com/binnyva/gatsby-garden/">Gatsby Garden</a> and <a href="https://obsidian.md">Obsidian</a></p>
+    <div className="footer-content">
+              <p className="is-size-7"> SalesFlow Coach V 0.3 | Made with ❤️  by Martin Stellar | Built with <a href="https://github.com/binnyva/gatsby-garden/">Gatsby Garden</a> and <a href="https://obsidian.md">Obsidian</a></p>
             </div>
 
           </div>
         
           <div className="column is-one-and-a-half-fifths" style={{paddingRight: 3+'em'}}>
-
+<h4>Navigation</h4>
             <div className="note-graph">
+            
               <Graph
                 id="note-link-graph"
                 data={graphData}

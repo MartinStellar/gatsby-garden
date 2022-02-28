@@ -9,6 +9,7 @@ module.exports = {
       { type: 'page', item: '', title: 'Home'}, // Type can be 'page', 'note', 'tag', or 'link'
       { type: 'link', item: '/about-salesflow-coach', title: "About"},
       { type: 'link', item: '/tags/trainings', title: "Trainings"},
+      { type: 'link', item: '/tags', title: "Tags"},
       { type: 'page', item: 'support' },
     ],
 
