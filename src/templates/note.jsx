@@ -85,49 +85,26 @@ export default function Note({ pageContext, data }) {
             <div className="note-content">
               <MDXRenderer>{post.body}</MDXRenderer>
             </div>
+                    
+            <div className="note-meta">
             
-    <div className="note-meta">
-    
-    {/*            
-      {pageContext.referredBy.length ? (
-      <div className="related note-references">
-      <h5 className="block-title">Links to this note</h5>
-      <div className="related-wrapper">
-      {pageContext.referredBy.map((note, index) => (
-      <div key={index} className="related-group">
-      <Link to={`/${makeSlug(note.title)}`}>
-      <h4>{note.title}</h4>
-      </Link>
-      </div>
-      ))}
-      </div>
-      </div>
-      ) : null}*/}
-    
-    {post.frontmatter.tags ? (
-      <div className="related block-area">
-      <div className="related-wrapper">
-      <div className="related-group">
-      <div className="note-tags">
-      <strong className="note-meta-title">
-      Tags:{' '}
-      </strong>
-      <ul>
-      {post.frontmatter.tags.map((tag, index) => (
-        <li key={index}>
-        <Link to={`/tags/${makeSlug(tag)}`}>{tag}</Link>
-        </li>
-      ))}
-      </ul>
-      </div>
-      </div>
-      </div> 
-      </div>
-    ) : null }
-    
-    
-    </div>
-            <p>&nbsp;</p>
+              {post.frontmatter.tags ? (
+                <div className="related block-area">
+                  <div className="note-tags">
+                    <strong className="note-meta-title">
+                    Tags:{' '}
+                    </strong>
+                    <ul>
+                    {post.frontmatter.tags.map((tag, index) => (
+                      <li key={index}>
+                      <Link to={`/tags/${makeSlug(tag)}`}>{tag}</Link>
+                      </li>
+                    ))}
+                    </ul>
+                  </div>
+                </div>
+              ) : null }
+            </div>
 
             {/* This is Binny's two-column Nav Menu layout. I'm keeping it here in case I want to quickly bring it back some day
               <div className="note-navigation columns">
@@ -148,7 +125,7 @@ export default function Note({ pageContext, data }) {
               </div>
             */}
             
-    <div className="note-navigation columns" style={{fontSize:'14px'}}>
+              <div className="note-navigation columns" style={{fontSize:'14px'}}>
     
                 <div className="column">
                   <Link to='/pick-a-lead-and-review-where-that-deal-is-at'>🚀 Review lead</Link>
@@ -161,14 +138,14 @@ export default function Note({ pageContext, data }) {
                 </div>
               </div>
             
-    <div className="footer-content">
+            <div className="footer-content">
               <p className="is-size-7"> SalesFlow Coach V 0.3 | Made with ❤️  by Martin Stellar | Built with <a href="https://github.com/binnyva/gatsby-garden/">Gatsby Garden</a> and <a href="https://obsidian.md">Obsidian</a></p>
             </div>
 
           </div>
         
           <div className="column is-one-and-a-half-fifths" style={{paddingRight: 3+'em'}}>
-<h4>Navigation</h4>
+            <h4>Navigation</h4>
             <div className="note-graph">
             
               <Graph

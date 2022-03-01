@@ -1,7 +1,6 @@
 import React from 'react'
 import { Link, navigate } from 'gatsby'
 import '../styles/note.css'
-const moment = require('moment')
 
 export default function NoteList({ notes }) {
   return (
@@ -42,9 +41,6 @@ export default function NoteList({ notes }) {
                 ))
               : 'No Tags'}
           </p> : null }
-          <p className="note-date">
-            Published on {moment(new Date(data.node.fields.date)).fromNow()}
-          </p>
         </div>
       ))}
     </div>
