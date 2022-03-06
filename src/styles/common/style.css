@@ -3,21 +3,21 @@
 
 html, html[data-theme="light"], body.light {
     --bg-main: #FFFFFF;
-    --bg-sub: #FAFAFC;
+    --bg-sub: #ffffff;
     --color-bis: #363636;
     --text-main: #18181C;
     --text-sub: #5D5D67;
-    --link: #2380ED;
+    --link: #405aac;
     --border: #E5E5E5;
 }
 
 html[data-theme="dark"], body.dark {
-    --bg-main: #18181C;
-    --bg-sub: #262626;
+    --bg-main: #424242;
+    --bg-sub: #424242;
     --color-bis: #E6E6E6;
     --text-main: #FAFAFC;
     --text-sub: #FFFFFF;
-    --link: #6D9EFF;
+    --link: #405aac;
     --border: #353535;
 }
 
@@ -28,7 +28,7 @@ html[data-theme="dark"], body.dark {
         --bg-sub: #262626;
         --text-main: #FAFAFC;
         --text-sub: #FFFFFF;
-        --link: #6D9EFF;
+        --link: #405aac;
         --border: #353535;
     }
 
@@ -151,21 +151,25 @@ main {
 h1 {
     font-size: 2.074rem;
     font-weight: 600;
+    color: #405aac;
 }
 
 h2 {
     font-size: 1.728rem;
     font-weight: 600;
+    color: #54595F;
 }
 
 h3 {
     font-size: 1.44rem;
     font-weight: 600;
+    color: #54595F; 
 }
 
 h4 {
     font-size: 1.2rem;
     font-weight: 600;
+    color: #405aac;
 }
 
 h5 {
@@ -217,7 +221,7 @@ h6 {
 
 h1, h2, h3, h4, h5, h6 {
     margin: 0;
-    font-family: 'IBM Plex Sans', sans-serif;
+    font-family: 'Playfair Display', serif;
 }
 
 p a,
@@ -533,6 +537,7 @@ hr {
     font-family: var(--primary-font-family);
     font-size: 13px;
     margin-left: -3px;
+    color: #ac4045;
 }
 
 .link-to-notes a:hover {
@@ -1173,54 +1178,6 @@ label.srs-toggle {
     word-wrap:break-word;
 }
 
-.related {
-    width: 100%;
-    min-height: 100px;
-    border-radius: 10px;
-}
-
-.related h4 {
-    color: var(--text-sub);
-    padding-left: 10px
-}
-
-.related-wrapper {
-    column-count: 2 !important;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-gap: 10px;
-}
-
-.related-group {
-    width: 95% !important;
-    height: 100%;
-    border-radius: 8px;
-    cursor: pointer;
-    background-color: var(--bg-sub);
-    padding: 16px;
-}
-
-.related-group:hover {
-        box-shadow: 0px 12px 32px rgba(27, 25, 36, 0.12);
-}
-
-.related-group a {
-    text-decoration: none;
-    color:var(--link)
-}
-
-.related-title {
-    padding-left: 10px;
-    padding-right: 10px;
-}
-
-
-.related-excerpt {
-    color: var(--text-main) !important;
-    padding-left: 10px;
-    padding-right: 5px;
-    font-size: 12px !important;
-}
 
 .scroll-to-top {
     position: fixed;
@@ -1390,7 +1347,8 @@ label.srs-toggle {
 }
 }
 
-@media screen and (max-width: 1024px) {
+
+@media screen and (max-width: 100%) {
     .tooltip .right {
         display: none;
     }

@@ -1,5 +1,13 @@
+.navbar-search {
+  margin: 0 2rem 0 0;
+  width: 42%;
+}
+.navbar-search-item {
+  width: 100%;
+}
 form.search-form {
   position: relative;
+  width: 100%;
 }
 
 form.search-form input {

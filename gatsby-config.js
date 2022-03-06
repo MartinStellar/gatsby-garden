@@ -1,24 +1,17 @@
 module.exports = {
-  // pathPrefix: `/notes`, // If your Digital Garden is not published at the root of your website, use this.
+  // pathPrefix: `/SFC/`, // If your Digital Garden is not published at the root of your website, use this.
   siteMetadata: {
-    title: `Gatsby Garden`,
-    description: `A Digital Garden Tended by Gatsby`,
+    title: `SalesFlow Coach`,
+    description: `by Martin Stellar`,
 
-    // siteUrl: `https://yoursite.com/notes/`, // URL at which your site will be published. This should be present if you want RSS feed.
-    // headerMenu: [ // Top Navbar items
-    //   {type: 'page', item: '', title: 'Home'}, // Type can be 'page', 'note', 'tag', or 'link'
-    //   {type: 'page', item: 'sitemap', title: 'Sitemap'},
-    //   {type: 'page', item: 'rss.xml', title: 'RSS'},
-    //   {
-    //     type: 'page', item: 'tags', title: 'Tags',
-    //     menu: [ // Only one level depth, please.
-    //       {type: 'tag',item: 'zettelkasten'},
-    //       {type: 'tag',item: 'philosophy'},
-    //       {type: 'tag',item: 'psychology'},
-    //       {type: 'tag',item: 'rationality'},
-    //     ]
-    //   },
-    // ],
+    siteUrl: `https://salesflowcoach.martinstellar.com/`, // URL at which your site will be published. This should be present if you want RSS feed.
+    headerMenu: [ // Top Navbar items
+      { type: 'page', item: '', title: 'Home'}, // Type can be 'page', 'note', 'tag', or 'link'
+      { type: 'link', item: '/about-salesflow-coach', title: "About"},
+      { type: 'link', item: '/tags/trainings', title: "Trainings"},
+      { type: 'link', item: '/tags', title: "Tags"},
+      { type: 'page', item: 'support' },
+    ],
 
     // menu: [ // This is the Table of Contents that comes in the home page if a Home Note is not specified. It can be much longer than the header menu.
     //   ... Same structure as headerMenu. You can have any depth level - multiple menus can be nested.
@@ -106,24 +99,30 @@ module.exports = {
           //     parseWikiLinks: true,
           //   },
           // },
+          // {
+          //   resolve: `gatsby-remark-wiki-links`,
+          //   options: {
+          //     slugify: `${__dirname}/src/utils/make-slug.js`,
+          //     stripBrackets: true
+          //   }
+          // }
           {
-            resolve: `gatsby-remark-wiki-links`,
+            resolve: 'gatsby-remark-obsidian',
             options: {
-              slugify: `${__dirname}/src/utils/make-slug.js`,
-              stripBrackets: true
-            }
-          }
+              titleToURL: require(`${__dirname}/src/utils/make-slug.js`)
+            },
+          },
         ],
       },
     },
 
-    // {
-    //   resolve: `gatsby-plugin-google-fonts`,
-    //   options: {
-    //     fonts: [`IBM Plex Sans:ital,wght@0,400;0,600;1,400;1,600`],
-    //     display: `swap`,
-    //   },
-    // },
+    {
+      resolve: `gatsby-plugin-google-fonts`,
+      options: {
+        fonts: [`Playfair Display:ital,wght@0,400;0,600;1,400;1,600`, `Roboto Medium:ital,wght@0,400;0,600;1,400;1,600`],
+        display: `swap`,
+      },
+    },
 
     {
       resolve: 'gatsby-plugin-local-search',

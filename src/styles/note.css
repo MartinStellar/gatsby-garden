@@ -7,6 +7,9 @@
   border-bottom-right-radius: 10px;
 }
 
+.note-tags {
+  font-size: .8em;
+}
 .note-tags h6,
 .note-tags ul,
 .note-tags li {
@@ -15,10 +18,10 @@
 .note-tags ul {
   padding: 0;
 }
-.note-area .note-tags li::after {
+.note-tags li::after {
   content: ", ";
 }
-.note-area .note-tags li:last-child:after {
+.note-tags li:last-child:after {
   content: "";
 }
 
@@ -27,7 +30,7 @@
 .note-graph,
 .note-meta,
 .note-content {
-  margin: 10px;
+  margin: 5px;
 }
 
 .note-content img {
@@ -35,6 +38,7 @@
 }
 .note-content a {
   color: var(--link) !important;
+  text-decoration: underline;
 }
 .note-content table {
   width: 100%;
@@ -72,7 +76,7 @@
 }
 
 .note-list .note-area {
-  padding: 10px;
+  padding: 5px;
 }
 .note-area .note-title {
   background-color: transparent;
@@ -84,7 +88,7 @@
 }
 .note-meta p, .note-meta div {
   margin: 0;
-  opacity: .8;
+  opacity: .9;
   font-size: .9em;
 }
 .note-list .note-tag-list {
@@ -99,4 +103,33 @@
 }
 .note-list .note-area:nth-child(odd) {
   background-color: var(--bg-sub);
+}
+.note-background {
+  background-color: var(--bg-main) !important;
+}
+
+.note-navigation {
+  margin-top: 1rem;
+  border-top:  1px solid var(--border);
+}
+.note-navigation ul {
+  list-style: none;
+}
+.note-navigation ul a {
+  color: var(--link);
+  font-size: .8em;
+}
+
+.footer-content p {
+  font-size: .8em;
+}
+
+.nav-list {
+  list-style: none;
+  margin: 20;
+  padding: 0;
+}
+
+.nav-list li {
+  margin-bottom:1rem;
 }

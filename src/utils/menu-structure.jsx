@@ -6,9 +6,17 @@ import { camelCase, startCase } from 'lodash'
 export const DefaultMenuStructure = (menuType = 'main') => {
   const defaultStructure = [
     // Default Menu.
-    { type: 'page', item: '', title: 'Home' },
-    { type: 'page', item: 'sitemap' },
-    { type: 'page', item: 'tags' },
+    { type: 'page', item: 'hi-im-salesflow-coach', title: 'Home' },
+    { type: 'link', item: 'about-salesflow-coach', title: "About"},
+    { type: 'link', item: 'about-salesflow-coach', title: "About"},
+    { type: 'link', item: '/trainings', title: "Trainings"},
+//  { type: 'link', item: 'sitemap' },
+//  <li><Link to='/tags/trainings'>💪 Trainings</Link></li>
+//  <li><Link to='/tags/articles'>📄 Articles</Link></li>
+//  <li><Link to='/tags'>#️⃣ Tags</Link></li>
+//  { type: 'page', item: 'tags' },
+    { type: 'page', item: 'support' },
+//  { type: 'page', item: 'start-salesflow-coach', title: "Start" },    
   ]
   let structure = null
 
@@ -51,7 +59,7 @@ export const DefaultMenuStructure = (menuType = 'main') => {
         return { type: 'tag', item: tag.fieldValue, liClassName: 'pill' }
       })
     } else {
-      structure = false
+      structure = null
     }
   }
 

@@ -4,6 +4,7 @@ Research/
 Deploy.txt
 package-lock.json
 _notes/.obsidian
+_notes/
 
 
 *.sublime-*
