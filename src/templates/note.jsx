@@ -88,10 +88,12 @@ export default function Note({ pageContext, data }) {
                     
             <div className="note-meta">
             
+            
               {post.frontmatter.tags ? (
                 <div className="related block-area">
                   <div className="note-tags">
                     <strong className="note-meta-title">
+                    <br />  
                     Tags:{' '}
                     </strong>
                     <ul>
@@ -139,7 +141,7 @@ export default function Note({ pageContext, data }) {
               </div>
             
             <div className="footer-content">
-              <p className="is-size-7"> SalesFlow Coach V 0.3 | Made with ❤️  by Martin Stellar | Built with <a href="https://github.com/binnyva/gatsby-garden/">Gatsby Garden</a> and <a href="https://obsidian.md">Obsidian</a></p>
+              <p className="is-size-7"> SalesFlow Coach V 1.0 | Made with ❤️  by Martin Stellar | Built with <a href="https://github.com/binnyva/gatsby-garden/">Gatsby Garden</a> and <a href="https://obsidian.md">Obsidian</a></p>
             </div>
 
           </div>
